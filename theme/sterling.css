@@ -1,0 +1,8 @@
+/* No top bar: the panels start at the top, the theme picker sits in the corner. */
+.pfx-panel { top: 0 !important; }
+.nav-theme.ss-theme { position: fixed; top: 10px; right: 14px; z-index: 20; }
+.ss-title { margin: 22px 0 10px; font-size: 34px; letter-spacing: 0.02em; }
+.ss-title a { text-decoration: none; color: #7d8794; }
+.ss-title a span { color: #b8c1cc; }
+html[data-theme="dark"] .ss-title a { color: #c9d1db; }
+html[data-theme="dark"] .ss-title a span { color: #8f9aa7; }

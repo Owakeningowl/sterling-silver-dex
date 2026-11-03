@@ -1,0 +1,7 @@
+<!doctype html>
+<meta charset="utf-8"><title>Sterling Silver Dex</title>
+<script>
+  // GitHub Pages serves this for unknown paths: deep links go back through the dex with ?p=<path>
+  var root = '/sterling-silver-dex/', p = location.pathname;
+  location.replace(p.indexOf(root) === 0 ? root + '?p=' + encodeURIComponent(p.slice(root.length)) + location.hash : root);
+</script>

@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <base href="/sterling-silver-dex/" />
+    <script>
+      // the dex lives in a GitHub Pages folder: links and routes hang off DEXROOT
+      var DEXROOT = location.pathname.indexOf('/sterling-silver-dex/') === 0 ? '/sterling-silver-dex/' : '/';
+      (function () {  // deep links arrive through 404.html as ?p=<path>
+        var m = location.search.match(/[?&]p=([^&]*)/);
+        if (m) history.replaceState(null, '', DEXROOT + decodeURIComponent(m[1]));
+      })();
+    </script>
+
+    <title>Sterling Silver Dex</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=IE8" />
+	<script>
+		(function () {
+			var theme = 'dark';  // dark until the visitor picks Light
+			try {
+				var savedTheme = localStorage.getItem('nulldex-theme');
+				if (savedTheme === 'dark' || savedTheme === 'light') theme = savedTheme;
+			} catch (e) {}
+			document.documentElement.setAttribute('data-theme', theme);
+		})();
+	</script>
+    <link
+      rel="stylesheet"
+      href="https://play.pokemonshowdown.com/style/font-awesome.css"
+    />
+    <link rel="stylesheet" href="theme/panels.css?v=20261103012439" />
+    <link rel="stylesheet" href="theme/main.css?v=20261103012439" />
+    <link rel="stylesheet" href="theme/theme-toggle.css?v=20261103012439" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://play.pokemonshowdown.com/style/utilichart.css?b359"
+    />
+    <link rel="stylesheet" href="theme/pokedex.css?v=20261103012439" />
+    <link rel="stylesheet" href="theme/sterling.css?v=20261103012439" />
+
+    <!-- Workarounds for IE bugs to display trees correctly. -->
+    <!--[if lte IE 6
+      ]><style>
+        li.tree {
+          height: 1px;
+        }
+      </style><!
+    [endif]-->
+    <!--[if IE 7
+      ]><style>
+        li.tree {
+          zoom: 1;
+        }
+      </style><!
+    [endif]-->
+  </head>
+  <body>
+    <ul class="nav nav-theme ss-theme">
+          <li>
+            <label class="theme-label" for="theme-select">Theme</label>
+            <select id="theme-select" class="textbox theme-select" aria-label="Theme">
+              <option value="light">Light</option>
+              <option value="dark">Dark</option>
+            </select>
+          </li>
+        </ul>
+    <div class="pfx-panel">
+      <div class="pfx-body">
+        <noscript
+          ><p>
+            <strong>Requires JavaScript!</strong>
+          </p></noscript
+        >
+        <p>Loading...</p>
+      </div>
+    </div>
+    <script src="js/lib/jquery-1.12.4.min.js?v=20261103012439"></script>
+    <script src="js/lib/lodash.min.js?v=20261103012439"></script>
+    <script src="js/lib/backbone-min.js?v=20261103012439"></script>
+    <script src="js/panels.js?v=20261103012439"></script>
+
+    <!-- Dependencies from the original Showdown dex; these are very explicitly unmodified for compatibility -->
+    <script src="config/config.js?v=20261103012439"></script>
+    <script src="js/battledata.js?v=20261103012439"></script>
+    <script src="data/search-index.js?v=20261103012439"></script>
+    <!-- This guy needs to be generated using the client repo -->
+    <script src="https://play.pokemonshowdown.com/data/teambuilder-tables.js?v0.9xy31"></script>
+    <script src="data/typechart.js?v=20261103012439"></script>
+    <script src="https://play.pokemonshowdown.com/data/aliases.js?v0.9xy31"></script>
+    <script src="js/battle-dex-search.js?v=20261103012439"></script>
+    <script src="js/search.js?v=20261103012439"></script>
+
+    <!-- Custom data files pulled from porydex extraction -->
+    <script src="data/species.js?v=20261103012439"></script>
+    <script src="data/learnsets.js?v=20261103012439"></script>
+    <script src="data/encounters.js?v=20261103012439"></script>
+    <script src="data/moves.js?v=20261103012439"></script>
+    <script src="data/abilities.js?v=20261103012439"></script>
+    <script src="data/items.js?v=20261103012439"></script>
+
+    <script src="js/pokedex.js?v=20261103012439"></script>
+    <script src="js/pokedex-pokemon.js?v=20261103012439"></script>
+    <script src="js/pokedex-moves.js?v=20261103012439"></script>
+    <script src="js/pokedex-encounters.js?v=20261103012439"></script>
+    <script src="js/pokedex-search.js?v=20261103012439"></script>
+    <script src="js/nulldex-encounters.js?v=20261103012439"></script>
+    <script src="js/router.js?v=20261103012439"></script>
+    <script src="js/theme-toggle.js?v=20261103012439"></script>
+    <script src="js/update-checker.js?v=20261103012439"></script>
+  </body>
+</html>
